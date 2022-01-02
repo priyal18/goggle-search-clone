@@ -25,7 +25,7 @@ export const Results = () => {
     switch (location.pathname) {
         case '/search':
             return (
-                <div className = "flex flex-wrap justofy-between space-y-6 sm:px-56">
+                <div className = "flex flex-wrap justify-between space-y-6 sm:px-56">
                     {results?.map(({link,title},index) => (
                         <div key={index} className="md:w-2/5 w-full">
                             <a href={link} target="_blank" rel="noreferrer">
@@ -56,7 +56,7 @@ export const Results = () => {
                         {results?.map(({image, link: { href,title }},index) => (
                             <a className="sm:p-3 p-5" href={href} key={index} target="_blank" rel="noreferrer">
                                 <img src = {image?.src} alt={title} loading="lazy" />
-                                <p className = "w-36 break-words text-sm mt-2">
+                                <p className = "sm:w-36 w-36 break-words text-sm mt-2">
                                     {title}
                                 </p>
                             </a>
@@ -65,7 +65,7 @@ export const Results = () => {
                 );
         case '/news':
             return (
-                <div className = "flex flex-wrap justofy-between space-y-6 sm:px-56 items-center">
+                <div className = "flex flex-wrap justify-between space-y-6 sm:px-56 items-center">
                     {results?.map(({links,id,source,title},index) => (
                         <div key={index} className="md:w-2/5 w-full">
                             <a href={links?.[0].href} target="_blank" rel="noreferrer" className="hover:underline">
