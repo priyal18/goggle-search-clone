@@ -6,7 +6,7 @@ const baseUrl = 'https://google-search3.p.rapidapi.com/api/v1';
 export const ResultContextProvider = ( { children }) => {
     const [results, setResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('Javascript');
+    const [searchTerm, setSearchTerm] = useState('sundar pichai');
 
     // /videos, /search
     const getResults = async(type) => {
@@ -28,7 +28,9 @@ export const ResultContextProvider = ( { children }) => {
             setResults(data.entries);
         }else if(type.includes('/images')){
             setResults(data.image_results);
-        }else{
+        }else if(type.includes('/search')){
+            setResults(data.results);
+        }else {
             setResults(data.results);
         }
         setIsLoading(false); 
